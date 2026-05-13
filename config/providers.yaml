@@ -1,0 +1,47 @@
+providers:
+  ROTAR:
+    type: generic
+    anchor:
+      pattern: "CODIGO"
+    mapping:
+      SKU: "CODIGO"
+      DESCRIPCION: "DESCRIPCION"
+      PRECIO: "PRECIO"
+    defaults:
+      MONEDA: "USD"
+      PROVEEDOR: "ROTAR"
+  BERTINI:
+    type: generic
+    anchor:
+      pattern: "CÓDIGO"
+    mapping:
+      SKU: "Código"
+      DESCRIPCION: "Denominación"
+      PRECIO: "Precio"
+    defaults:
+      MONEDA: "ARS"
+      PROVEEDOR: "BERTINI"
+  MG:
+    type: generic
+    anchor:
+      pattern: "Articulo"
+    mapping:
+      SKU: "Articulo"
+      DESCRIPCION: "Descripción"
+      PRECIO: "Precio"
+    defaults:
+      MONEDA: "USD"
+      PROVEEDOR: "MG"
+  OH GARCIA:
+    type: layout
+    params:
+      y_threshold: 2
+      price_x_min: 450
+      sku_x_max: 140
+    mapping:
+      SKU: 0
+      DESCRIPCION: 1
+      PRECIO: 2
+    defaults:
+      MONEDA: "ARS"
+      PROVEEDOR: "OH GARCIA"
