@@ -13,11 +13,11 @@ providers:
   BERTINI:
     type: generic
     anchor:
-      pattern: "CÓDIGO"
+      pattern: "Código"
     mapping:
-      SKU: "Código"
-      DESCRIPCION: "Denominación"
-      PRECIO: "Precio"
+      SKU: "codigo"
+      DESCRIPCION: "denominacion"
+      PRECIO: "precio"
     defaults:
       MONEDA: "ARS"
       PROVEEDOR: "BERTINI"
@@ -45,3 +45,12 @@ providers:
     defaults:
       MONEDA: "ARS"
       PROVEEDOR: "OH GARCIA"
+  ARAG:
+    type: generic
+    mapping:
+      SKU: "codigo"
+      DESCRIPCION: "descripcion"
+      PRECIO: "lista pesos"
+    defaults:
+      MONEDA: "ARS"
+      PROVEEDOR: "ARAG"

@@ -23,14 +23,15 @@ class GenericTransformer(BaseTransformer):
         anchor_config = self.config.get("anchor")
         header_idx = self._find_header_row(df, anchor_config)
         
-        if header_idx is None:
-            return pd.DataFrame(columns=self.target_columns)
-
         # 2. Re-estructurar el DataFrame desde el encabezado
-        # Normalizamos los nombres de las columnas para el mapeo robusto
-        header_row = df.iloc[header_idx].astype(str).tolist()
-        df.columns = [self._normalize_text(c) for c in header_row]
-        df = df.iloc[header_idx + 1:].reset_index(drop=True)
+        if anchor_config and header_idx is not None:
+            # Si hay ancla y se encontró, usar esa fila como encabezado
+            header_row = df.iloc[header_idx].astype(str).tolist()
+            df.columns = [self._normalize_text(c) for c in header_row]
+            df = df.iloc[header_idx + 1:].reset_index(drop=True)
+        else:
+            # Si no hay ancla o no se encontró, usar las columnas originales
+            df.columns = [self._normalize_text(c) for c in df.columns]
         
         # 3. Mapear columnas
         mapping = self.config.get("mapping", {})
