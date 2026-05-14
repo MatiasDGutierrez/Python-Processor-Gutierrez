@@ -65,6 +65,11 @@ class GenericTransformer(BaseTransformer):
     def _find_header_row(self, df: pd.DataFrame, anchor_config: dict):
         if not anchor_config:
             return 0
+        
+        # Si se especifica una fila explícita, usarla
+        explicit_row = anchor_config.get("row")
+        if explicit_row is not None:
+            return explicit_row
             
         pattern = self._normalize_text(anchor_config.get("pattern"))
         col_idx = anchor_config.get("column")

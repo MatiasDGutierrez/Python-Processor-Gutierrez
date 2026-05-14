@@ -13,7 +13,8 @@ providers:
   BERTINI:
     type: generic
     anchor:
-      pattern: "Código"
+      pattern: "codigo"
+      row: 10
     mapping:
       SKU: "codigo"
       DESCRIPCION: "denominacion"
