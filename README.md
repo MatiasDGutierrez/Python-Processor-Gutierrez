@@ -79,15 +79,26 @@ Por favor, consulte el archivo [AGENTS.md](./AGENTS.md) para lineamientos de des
 - **Mejoras en Transformador Genérico:**
   - Agregado soporte para especificar fila explícita en configuración de anchor (parámetro `row`)
   - Permite procesar archivos Excel donde los encabezados están en una fila específica sin necesidad de buscar patrón
+- **Sistema de Mapeos Manuales:**
+  - Agregado soporte para mapeos manuales de archivos específicos en `config/providers.yaml`
+  - Permite procesar archivos que no contienen el nombre del proveedor en el nombre del archivo
 - **Configuración de Proveedores Actualizada:**
   - **BERTINI:** Configurado para usar fila 10 como encabezado (formato Excel con estructura compleja)
+  - **BERTINI_PDF:** Configurado para procesamiento por layout (PDF con múltiples columnas de precio)
   - **ARAG:** Configurado para procesamiento sin anchor (estructura directa desde fila 0)
+  - **DISCOS_CUCHILLAS:** Configurado para procesamiento por layout (PDF de discos y cuchillas)
+  - **ACCESORIOS_SEMBRADORA:** Configurado para procesamiento genérico (PDF de accesorios para sembradoras)
 - **Resultados de Procesamiento:**
   - ARAG: 3,896 filas normalizadas ✓
-  - BERTINI: 298 filas normalizadas ✓
+  - BERTINI (Excel): 298 filas normalizadas ✓
+  - BERTINI (PDF): 2,957 filas normalizadas ✓ (con ruido de encabezado)
   - ROTAR: 46 filas normalizadas ✓
   - OH GARCIA (Lista 136): 643 filas normalizadas ✓
   - OH GARCIA (Transmision): 327 filas normalizadas ✓
+  - DISCOS_CUCHILLAS: 795 filas normalizadas ✓ (con ruido de encabezado)
+  - ACCESORIOS_SEMBRADORA: 416 filas normalizadas ✓
+  - MG: No procesable (índice comercial sin precios)
+- **Archivos Procesados:** 8 de 9 archivos exitosamente
 
 ---
 *Desarrollado por [Pablo Chamena](https://github.com/pablochamena00)*
