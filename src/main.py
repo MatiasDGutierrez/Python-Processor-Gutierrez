@@ -13,7 +13,14 @@ def load_config(config_path="config/providers.yaml"):
 def detect_provider(filename, config):
     """
     Intenta detectar el proveedor basándose en el nombre del archivo.
+    También verifica mapeos manuales definidos en la configuración.
     """
+    # Primero verificar mapeos manuales de archivos específicos
+    file_mappings = config.get("file_mappings", {})
+    if filename in file_mappings:
+        return file_mappings[filename]
+    
+    # Luego buscar por nombre de proveedor en el nombre del archivo
     providers = config.get("providers", {}).keys()
     filename_upper = filename.upper()
     for provider in providers:

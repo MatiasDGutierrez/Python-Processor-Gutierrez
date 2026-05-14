@@ -1,3 +1,6 @@
+file_mappings:
+  "lista precios repuestos octubre 2025.pdf": "BERTINI_PDF"
+
 providers:
   ROTAR:
     type: generic
@@ -55,3 +58,16 @@ providers:
     defaults:
       MONEDA: "ARS"
       PROVEEDOR: "ARAG"
+  BERTINI_PDF:
+    type: layout
+    params:
+      y_threshold: 5
+      price_x_min: 500
+      sku_x_max: 100
+    mapping:
+      SKU: 0
+      DESCRIPCION: 1
+      PRECIO: 3
+    defaults:
+      MONEDA: "ARS"
+      PROVEEDOR: "BERTINI"
