@@ -1,5 +1,7 @@
 file_mappings:
   "lista precios repuestos octubre 2025.pdf": "BERTINI_PDF"
+  "LP-01-DISCOS Y CUCHILLAS - General v1.pdf": "DISCOS_CUCHILLAS"
+  "_LISTA  OCTUBRE 2025.pdf": "ACCESORIOS_SEMBRADORA"
 
 providers:
   ROTAR:
@@ -71,3 +73,27 @@ providers:
     defaults:
       MONEDA: "ARS"
       PROVEEDOR: "BERTINI"
+  DISCOS_CUCHILLAS:
+    type: layout
+    params:
+      y_threshold: 3
+      price_x_min: 400
+      sku_x_max: 200
+    mapping:
+      SKU: 2
+      DESCRIPCION: 0
+      PRECIO: 4
+    defaults:
+      MONEDA: "ARS"
+      PROVEEDOR: "DISCOS_CUCHILLAS"
+  ACCESORIOS_SEMBRADORA:
+    type: generic
+    anchor:
+      pattern: "CODIGO"
+    mapping:
+      SKU: "CODIGO"
+      DESCRIPCION: "DESCRIPCION"
+      PRECIO: "OCTUBRE"
+    defaults:
+      MONEDA: "ARS"
+      PROVEEDOR: "ACCESORIOS_SEMBRADORA"
