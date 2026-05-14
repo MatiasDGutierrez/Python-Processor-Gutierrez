@@ -73,5 +73,21 @@ python src/main.py
 ## 📝 Notas para Colaboradores
 Por favor, consulte el archivo [AGENTS.md](./AGENTS.md) para lineamientos de desarrollo y el [PRD.md](./PRD.md) para detalles sobre el alcance del producto.
 
+## 🔄 Cambios Recientes
+
+### Última Actualización (Mayo 2026)
+- **Mejoras en Transformador Genérico:**
+  - Agregado soporte para especificar fila explícita en configuración de anchor (parámetro `row`)
+  - Permite procesar archivos Excel donde los encabezados están en una fila específica sin necesidad de buscar patrón
+- **Configuración de Proveedores Actualizada:**
+  - **BERTINI:** Configurado para usar fila 10 como encabezado (formato Excel con estructura compleja)
+  - **ARAG:** Configurado para procesamiento sin anchor (estructura directa desde fila 0)
+- **Resultados de Procesamiento:**
+  - ARAG: 3,896 filas normalizadas ✓
+  - BERTINI: 298 filas normalizadas ✓
+  - ROTAR: 46 filas normalizadas ✓
+  - OH GARCIA (Lista 136): 643 filas normalizadas ✓
+  - OH GARCIA (Transmision): 327 filas normalizadas ✓
+
 ---
 *Desarrollado por [Pablo Chamena](https://github.com/pablochamena00)*
