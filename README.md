@@ -82,6 +82,14 @@ Por favor, consulte el archivo [AGENTS.md](./AGENTS.md) para lineamientos de des
 - **Sistema de Mapeos Manuales:**
   - Agregado soporte para mapeos manuales de archivos específicos en `config/providers.yaml`
   - Permite procesar archivos que no contienen el nombre del proveedor en el nombre del archivo
+- **Trazabilidad de Archivos:**
+  - Agregada columna `ARCHIVO_ORIGINAL` en el proceso de normalización (`src/main.py`)
+  - Permite identificar el archivo original de cada registro en los CSV generados
+- **Script de Unificación:**
+  - Nuevo script `agregar_archivo_original.py` para crear Excel unificado
+  - Combina todos los CSV normalizados en un solo archivo Excel
+  - Agrega columnas `PROVEEDOR` y `ARCHIVO_ORIGINAL` para identificación rápida
+  - Genera `output/inventario_unificado.xlsx` con todos los datos consolidados
 - **Configuración de Proveedores Actualizada:**
   - **BERTINI:** Configurado para usar fila 10 como encabezado (formato Excel con estructura compleja)
   - **BERTINI_PDF:** Configurado para procesamiento por layout (PDF con múltiples columnas de precio)
@@ -99,6 +107,7 @@ Por favor, consulte el archivo [AGENTS.md](./AGENTS.md) para lineamientos de des
   - ACCESORIOS_SEMBRADORA: 416 filas normalizadas ✓
   - MG: No procesable (índice comercial sin precios)
 - **Archivos Procesados:** 8 de 9 archivos exitosamente
+- **Excel Unificado:** 9,378 filas consolidadas con trazabilidad completa
 
 ---
 *Desarrollado por [Pablo Chamena](https://github.com/pablochamena00)*
